@@ -1,0 +1,18 @@
+# =============================================================================
+# docker-compose.yml  —  Day 12
+# =============================================================================
+# Vai trò: Định nghĩa toàn bộ stack để chạy product locally hoặc trên server.
+#
+# Services:
+#   - api       : FastAPI backend (tutor_agent + tất cả modules)
+#   - frontend  : UI chat đơn giản (prototype/)
+#   - chromadb  : Vector store (thay thế in-memory khi deploy)
+#   - langfuse  : Tracing dashboard (monitoring/tracing.py gửi data vào đây)
+#
+# Volumes:
+#   - ./data_for_rag:/app/data_for_rag  (mount data thật vào container)
+#   - chromadb_data:/chroma/chroma      (persist vector store giữa các lần restart)
+#
+# Chạy toàn bộ stack: docker compose up
+# Chỉ chạy API:       docker compose up api
+# =============================================================================

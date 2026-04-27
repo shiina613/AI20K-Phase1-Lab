@@ -1,0 +1,18 @@
+# =============================================================================
+# monitoring/slo.yaml  —  Day 13
+# =============================================================================
+# Vai trò: Định nghĩa Service Level Objectives — ngưỡng chất lượng tối thiểu.
+#
+# SLO là "hợp đồng chất lượng" của sản phẩm. Nếu vi phạm → alert ngay.
+#
+# Các SLO được định nghĩa ở đây:
+#   - response_time_p95 < 3000ms   : 95% câu hỏi trả lời trong 3 giây
+#   - guardrail_block_rate < 5%    : tỷ lệ bị chặn không quá 5%
+#   - hitl_escalation_rate < 10%   : tỷ lệ escalate không quá 10%
+#   - rag_hit_rate > 80%           : 80% câu hỏi tìm được context liên quan
+#   - answer_leak_rate = 0%        : tuyệt đối không được leak đáp án
+#
+# Được dùng bởi:
+#   - monitoring/tracing.py  (so sánh metrics thực tế với SLO)
+#   - eval/regression_gate.py (dùng SLO làm ngưỡng để quyết định release)
+# =============================================================================
